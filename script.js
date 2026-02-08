@@ -6,6 +6,65 @@ canvas.height = window.innerHeight;
 
 const context = canvas.getContext("2d");
 
+const confettiCanvas = document.getElementById("confettiCanvas");
+const ctx = confettiCanvas.getContext("2d");
+
+confettiCanvas.width = window.innerWidth;
+confettiCanvas.height = window.innerHeight;
+
+let confetti = [];
+
+function createConfetti() {
+    confetti = [];
+    for (let i = 0; i < 150; i++) {
+        confetti.push({
+            x: Math.random() * confettiCanvas.width,
+            y: Math.random() * -confettiCanvas.height,
+            r: Math.random() * 6 + 4,
+            d: Math.random() * 0.8 + 0.3,
+            color: `hsl(${Math.random() * 360}, 80%, 60%)`,
+            tilt: Math.random() * 10 - 5,
+        });
+    }
+}
+
+function drawConfetti() {
+    ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+
+    confetti.forEach(p => {
+        ctx.beginPath();
+        ctx.fillStyle = p.color;
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+    });
+
+    updateConfetti();
+}
+
+function updateConfetti() {
+    confetti.forEach(p => {
+        p.y += p.d * 6;
+        p.x += Math.sin(p.y * 0.02);
+        p.tilt += 0.1;
+
+        if (p.y > confettiCanvas.height) {
+            p.y = -10;
+        }
+    });
+}
+
+let confettiAnimation;
+function startConfetti() {
+    createConfetti();
+    confettiAnimation = setInterval(drawConfetti, 16);
+
+    // Stop after some time (optional)
+    setTimeout(() => {
+        clearInterval(confettiAnimation);
+        ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+    }, 5000);
+}
+
 /* ---------------- HEART BACKGROUND ---------------- */
 
 const heartsCount = 120;
@@ -248,7 +307,8 @@ function showButtons() {
         </div>
     `;
 
-    document.getElementById("yesBtn").onclick = () => {
+    document.getElementById("yesBtn").addEventListener("click", () => {
+        startConfetti();
         document.getElementById("answer").innerText = "Thank you ❤️";
     };
 
