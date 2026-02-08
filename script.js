@@ -291,7 +291,7 @@ function showButtons() {
                 font-size: 18px;
                 margin: 10px;
                 cursor: pointer;
-            ">No 🙈</button>
+            ">No 😔</button>
 
             <div id="answer" style="
                 margin-top: 20px;
@@ -304,7 +304,7 @@ function showButtons() {
     document.getElementById("yesBtn").addEventListener("click", () => {
         startConfetti();
         document.getElementById("answer").innerText = "Thank you ❤️";
-    };
+    });
 
     document.getElementById("noBtn").onclick = () => {
         document.getElementById("answer").innerText =
