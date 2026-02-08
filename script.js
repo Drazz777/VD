@@ -1,11 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-const canvas = document.getElementById("starfield");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const context = canvas.getContext("2d");
-
 const confettiCanvas = document.getElementById("confettiCanvas");
 const ctx = confettiCanvas.getContext("2d");
 
