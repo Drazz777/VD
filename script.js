@@ -63,19 +63,8 @@ function updateStars() {
 const button = document.getElementById("valentinesButton");
 
 button.addEventListener("click", () => {
-    if (button.textContent === "Click Me! ❤") {
-        button.textContent = "loading...";
-        fetch("send_mail.php")
-            .then((response) => {
-                if (response.ok) {
-                    button.textContent = "Check Your Email 🙃";
-                } else {
-                    button.textContent = "Error 😞";
-                }
-            })
-            .catch(() => {
-                button.textContent = "Error 😞";
-            });
+    if (button.textContent === "Please say Yes! ❤") {
+        button.textContent = "Thank you!!!";
     }
 });
 
