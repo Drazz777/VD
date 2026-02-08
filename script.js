@@ -88,7 +88,7 @@ function drawText() {
     if (frameNumber < 250) {
         context.fillStyle = `rgba(220, 20, 60, ${opacity})`;
         context.fillText(
-            "everyday day I cannot believe how lucky I am",
+            "Bobooo back in 2023, on Propose Day, I asked you to marry me because when I looked at you, I didn’t just see my girlfriend, I saw my wife. That feeling hasn’t changed. If anything, it has only become more real.",
             canvas.width / 2,
             canvas.height / 2
         );
@@ -98,7 +98,7 @@ function drawText() {
     if (frameNumber >= 250 && frameNumber < 500) {
         context.fillStyle = `rgba(220, 20, 60, ${opacity})`;
         context.fillText(
-            "everyday day I cannot believe how lucky I am",
+            "Bobooo back in 2023, on Propose Day, I asked you to marry me because when I looked at you, I didn’t just see my girlfriend, I saw my wife. That feeling hasn’t changed. If anything, it has only become more real.",
             canvas.width / 2,
             canvas.height / 2
         );
@@ -112,7 +112,7 @@ function drawText() {
 
         if (window.innerWidth < 600) {
             drawTextWithLineBreaks(
-                ["amongst trillions and trillions of stars,", "over billions of years"],
+                ["Since then we have been through so much together. We have shared so many happy moments, spent countless hours side by side and we have had lots of fights too. We have seen each other's good and bad side. There are parts of each other we don’t always love and that’s okay. There is no perfect relationship, but there is always scope to be better."],
                 canvas.width / 2,
                 canvas.height / 2,
                 fontSize,
@@ -120,7 +120,7 @@ function drawText() {
             );
         } else {
             context.fillText(
-                "amongst trillions and trillions of stars, over billions of years",
+                "Since then we have been through so much together. We have shared so many happy moments, spent countless hours side by side and we have had lots of fights too. We have seen each other's good and bad side. There are parts of each other we don’t always love and that’s okay. There is no perfect relationship, but there is always scope to be better.",
                 canvas.width / 2,
                 canvas.height / 2
             );
@@ -133,7 +133,7 @@ function drawText() {
 
         if (window.innerWidth < 600) {
             drawTextWithLineBreaks(
-                ["amongst trillions and trillions of stars,", "over billions of years"],
+                ["Since then we have been through so much together. We have shared so many happy moments, spent countless hours side by side and we have had lots of fights too. We have seen each other's good and bad side. There are parts of each other we don’t always love and that’s okay. There is no perfect relationship, but there is always scope to be better."],
                 canvas.width / 2,
                 canvas.height / 2,
                 fontSize,
@@ -141,7 +141,7 @@ function drawText() {
             );
         } else {
             context.fillText(
-                "amongst trillions and trillions of stars, over billions of years",
+                "Since then we have been through so much together. We have shared so many happy moments, spent countless hours side by side and we have had lots of fights too. We have seen each other's good and bad side. There are parts of each other we don’t always love and that’s okay. There is no perfect relationship, but there is always scope to be better.",
                 canvas.width / 2,
                 canvas.height / 2
             );
@@ -154,7 +154,7 @@ function drawText() {
     if (frameNumber > 1000 && frameNumber < 1250) {
         context.fillStyle = `rgba(220, 20, 60, ${opacity})`;
         context.fillText(
-            "to be alive, and to get to spend this life with you",
+            "I want us to grow together, fix what we can, accept what we can’t and always be with each other with patience and love.",
             canvas.width / 2,
             canvas.height / 2
         );
@@ -164,7 +164,7 @@ function drawText() {
     if (frameNumber >= 1250 && frameNumber < 1500) {
         context.fillStyle = `rgba(220, 20, 60, ${opacity})`;
         context.fillText(
-            "to be alive, and to get to spend this life with you",
+            "I want us to grow together, fix what we can, accept what we can’t and always be with each other with patience and love.",
             canvas.width / 2,
             canvas.height / 2
         );
@@ -176,7 +176,7 @@ function drawText() {
     if (frameNumber > 1500 && frameNumber < 1750) {
         context.fillStyle = `rgba(220, 20, 60, ${opacity})`;
         context.fillText(
-            "is so incredibly, unfathomably unlikely",
+            "I want us to grow together, fix what we can, accept what we can’t and always be with each other with patience and love.",
             canvas.width / 2,
             canvas.height / 2
         );
@@ -186,7 +186,7 @@ function drawText() {
     if (frameNumber >= 1750 && frameNumber < 2000) {
         context.fillStyle = `rgba(220, 20, 60, ${opacity})`;
         context.fillText(
-            "is so incredibly, unfathomably unlikely",
+            "I want us to grow together, fix what we can, accept what we can’t and always be with each other with patience and love.",
             canvas.width / 2,
             canvas.height / 2
         );
@@ -200,7 +200,7 @@ function drawText() {
 
         if (window.innerWidth < 600) {
             drawTextWithLineBreaks(
-                ["and yet here I am to get the impossible", "chance to get to know you"],
+                ["I didn’t always dream of this life. But with you in it, I want this life more than anything."],
                 canvas.width / 2,
                 canvas.height / 2,
                 fontSize,
@@ -208,7 +208,7 @@ function drawText() {
             );
         } else {
             context.fillText(
-                "and yet here I am to get the impossible chance to get to know you",
+                "I didn’t always dream of this life. But with you in it, I want this life more than anything.",
                 canvas.width / 2,
                 canvas.height / 2
             );
@@ -221,7 +221,7 @@ function drawText() {
 
         if (window.innerWidth < 600) {
             drawTextWithLineBreaks(
-                ["and yet here I am to get the impossible", "chance to get to know you"],
+                ["I didn’t always dream of this life. But with you in it, I want this life more than anything."],
                 canvas.width / 2,
                 canvas.height / 2,
                 fontSize,
@@ -229,7 +229,7 @@ function drawText() {
             );
         } else {
             context.fillText(
-                "and yet here I am to get the impossible chance to get to know you",
+                "I didn’t always dream of this life. But with you in it, I want this life more than anything.",
                 canvas.width / 2,
                 canvas.height / 2
             );
