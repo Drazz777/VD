@@ -119,7 +119,7 @@ function drawText() {
     }
 
     // TEXT 2
-    let o2 = getOpacity(600, fadeIn, hold, fadeOut);
+    let o2 = getOpacity(900, fadeIn, hold, fadeOut);
     if (o2 > 0) {
         context.fillStyle = `rgba(180,20,60,${o2})`;
         wrapText(
@@ -129,7 +129,7 @@ function drawText() {
     }
 
     // TEXT 3
-    let o3 = getOpacity(1200, fadeIn, hold, fadeOut);
+    let o3 = getOpacity(1800, fadeIn, hold, fadeOut);
     if (o3 > 0) {
         context.fillStyle = `rgba(180,20,60,${o3})`;
         wrapText(
@@ -139,7 +139,7 @@ function drawText() {
     }
 
     // TEXT 4
-    let o4 = getOpacity(1800, fadeIn, hold, fadeOut);
+    let o4 = getOpacity(2700, fadeIn, hold, fadeOut);
     if (o4 > 0) {
         context.fillStyle = `rgba(180,20,60,${o4})`;
         wrapText(
@@ -149,7 +149,7 @@ function drawText() {
     }
 
     // FINAL TEXT (fade in and stay forever)
-    let o5 = Math.min((frameNumber - 2400) / fadeIn, 1);
+    let o5 = Math.min((frameNumber - 2700) / fadeIn, 1);
     if (o5 > 0) {
         context.fillStyle = `rgba(180,20,60,${o5})`;
         wrapText(
