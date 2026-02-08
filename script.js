@@ -60,8 +60,7 @@ function wrapText(text, x, y, maxWidth, lineHeight) {
 
     for (let i = 0; i < words.length; i++) {
         const testLine = line + words[i] + " ";
-        const metrics = context.measureText(testLine);
-        if (metrics.width > maxWidth && i > 0) {
+        if (context.measureText(testLine).width > maxWidth && i > 0) {
             context.fillText(line, x, y + offsetY);
             line = words[i] + " ";
             offsetY += lineHeight;
@@ -72,21 +71,10 @@ function wrapText(text, x, y, maxWidth, lineHeight) {
     context.fillText(line, x, y + offsetY);
 }
 
-/* ---------------- BUTTON ---------------- */
-
-const button = document.getElementById("valentinesButton");
-button.addEventListener("click", () => {
-    if (button.textContent === "Please say Yes ❤") {
-        button.textContent = "Thank You!!!";
-    }
-});
-
 /* ---------------- TEXT ANIMATION ---------------- */
 
 let frameNumber = 0;
 let opacity = 0;
-let secondOpacity = 0;
-let thirdOpacity = 0;
 
 function drawText() {
     const fontSize = Math.min(28, canvas.width / 18);
@@ -97,90 +85,68 @@ function drawText() {
     context.textAlign = "center";
     context.textBaseline = "middle";
 
-    // Softer glow
-    context.shadowColor = "rgba(255, 150, 180, 0.4)";
-    context.shadowBlur = 6;
+    context.shadowColor = "rgba(255, 150, 180, 0.35)";
+    context.shadowBlur = 5;
     context.fillStyle = `rgba(180, 20, 60, ${opacity})`;
 
     const cx = canvas.width / 2;
     const cy = canvas.height / 2;
 
-    if (frameNumber < 250) {
+    /* ---- TEXT 1 ---- */
+    if (frameNumber < 400) {
         wrapText(
             "Bobooo back in 2023, on Propose Day, I asked you to marry me because when I looked at you, I didn’t just see my girlfriend, I saw my wife.",
-            cx,
-            cy,
-            maxWidth,
-            lineHeight
+            cx, cy, maxWidth, lineHeight
         );
-        opacity += 0.01;
+        opacity += 0.004;
     }
 
-    if (frameNumber >= 250 && frameNumber < 500) opacity -= 0.01;
-    if (frameNumber === 500) opacity = 0;
+    if (frameNumber >= 400 && frameNumber < 700) opacity -= 0.004;
+    if (frameNumber === 700) opacity = 0;
 
-    if (frameNumber > 500 && frameNumber < 900) {
+    /* ---- TEXT 2 ---- */
+    if (frameNumber > 700 && frameNumber < 1200) {
         wrapText(
             "Since then we have been through so much together. We have shared happy moments, countless hours together, fights, understanding, growth and acceptance.",
-            cx,
-            cy,
-            maxWidth,
-            lineHeight
+            cx, cy, maxWidth, lineHeight
         );
-        opacity += 0.01;
+        opacity += 0.004;
     }
 
-    if (frameNumber >= 900 && frameNumber < 1200) opacity -= 0.01;
-    if (frameNumber === 1200) opacity = 0;
+    if (frameNumber >= 1200 && frameNumber < 1500) opacity -= 0.004;
+    if (frameNumber === 1500) opacity = 0;
 
-    if (frameNumber > 1200 && frameNumber < 1500) {
+    /* ---- TEXT 3 ---- */
+    if (frameNumber > 1500 && frameNumber < 2000) {
         wrapText(
             "I want us to grow together, fix what we can, accept what we can’t and always choose each other with patience and love.",
-            cx,
-            cy,
-            maxWidth,
-            lineHeight
+            cx, cy, maxWidth, lineHeight
         );
-        opacity += 0.01;
+        opacity += 0.004;
     }
 
-    if (frameNumber >= 1500 && frameNumber < 1800) opacity -= 0.01;
-    if (frameNumber === 1800) opacity = 0;
+    if (frameNumber >= 2000 && frameNumber < 2300) opacity -= 0.004;
+    if (frameNumber === 2300) opacity = 0;
 
-    if (frameNumber > 1800 && frameNumber < 2100) {
+    /* ---- TEXT 4 ---- */
+    if (frameNumber > 2300 && frameNumber < 2800) {
         wrapText(
             "I didn’t always dream of this life. But with you in it, I want this life more than anything.",
-            cx,
-            cy,
-            maxWidth,
-            lineHeight
+            cx, cy, maxWidth, lineHeight
         );
-        opacity += 0.01;
+        opacity += 0.004;
     }
 
-    if (frameNumber >= 2100 && frameNumber < 2400) opacity -= 0.01;
-    if (frameNumber === 2400) opacity = 0;
+    if (frameNumber >= 2800 && frameNumber < 3100) opacity -= 0.004;
+    if (frameNumber === 3100) opacity = 0;
 
-    if (frameNumber > 2400) {
+    /* ---- FINAL TEXT ---- */
+    if (frameNumber > 3100) {
         wrapText(
-            "I love you so much {name}, more than all the time and space in the universe can contain.",
-            cx,
-            cy,
-            maxWidth,
-            lineHeight
+            "So boboo will you please be my Valentine, my best friend and my wife 🥺❤️",
+            cx, cy, maxWidth, lineHeight
         );
-        opacity += 0.01;
-    }
-
-    if (frameNumber > 2700) {
-        context.fillStyle = `rgba(180, 20, 60, ${secondOpacity})`;
-        context.fillText(
-            "Happy Valentine's Day ❤",
-            cx,
-            cy + 120
-        );
-        secondOpacity += 0.01;
-        button.style.display = "block";
+        opacity = Math.min(opacity + 0.004, 1);
     }
 
     context.shadowBlur = 0;
@@ -189,7 +155,6 @@ function drawText() {
 /* ---------------- MAIN LOOP ---------------- */
 
 function draw() {
-    // White background
     context.fillStyle = "#ffffff";
     context.fillRect(0, 0, canvas.width, canvas.height);
 
