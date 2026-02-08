@@ -109,55 +109,80 @@ function drawText() {
     const fadeOut = 120;
 
     let o1 = getOpacity(0, fadeIn, 1000, fadeOut);
-    if (o1 > 0) wrapText(
-        "Bobooo back in 2023, on Propose Day, I asked you to marry me because when I looked at you, I didn’t just see my girlfriend, I saw my wife.",
-        cx, cy, maxWidth, lineHeight
-    );
+    if (o1 > 0) {
+        context.fillStyle = `rgba(180,20,60,${o1})`;
+        wrapText(
+            "Bobooo back in 2023, on Propose Day, I asked you to marry me because when I looked at you, I didn’t just see my girlfriend, I saw my wife.",
+            cx, cy, maxWidth, lineHeight
+        );
+    }
 
     let o11 = getOpacity(1300, fadeIn, 700, fadeOut);
-    if (o11 > 0) wrapText(
-        "That feeling hasn’t changed. If anything, it has only become more real.",
-        cx, cy, maxWidth, lineHeight
-    );
+    if (o11 > 0) {
+        context.fillStyle = `rgba(180,20,60,${o11})`;
+        wrapText(
+            "That feeling hasn’t changed. If anything, it has only become more real.",
+            cx, cy, maxWidth, lineHeight
+        );
+    }
 
     let o2 = getOpacity(2300, fadeIn, 1200, fadeOut);
-    if (o2 > 0) wrapText(
-        "Since then we have been through so much together. We have shared so many happy moments, spent countless hours side by side and we have had lots of fights too.",
-        cx, cy, maxWidth, lineHeight
-    );
+    if (o2 > 0) {
+        context.fillStyle = `rgba(180,20,60,${o2})`;
+        wrapText(
+            "Since then we have been through so much together. We have shared so many happy moments, spent countless hours side by side and we have had lots of fights too.",
+            cx, cy, maxWidth, lineHeight
+        );
+    }
 
     let o21 = getOpacity(3800, fadeIn, 500, fadeOut);
-    if (o21 > 0) wrapText(
-        "We have seen each other's good and bad side.",
-        cx, cy, maxWidth, lineHeight
-    );
+    if (o21 > 0) {
+        context.fillStyle = `rgba(180,20,60,${o21})`;
+        wrapText(
+            "We have seen each other's good and bad side.",
+            cx, cy, maxWidth, lineHeight
+        );
+    }
 
     let o22 = getOpacity(4600, fadeIn, 1000, fadeOut);
-    if (o22 > 0) wrapText(
-        "There are parts of each other we don’t always love and that’s okay. There is no perfect relationship, but there is always scope to be better.",
-        cx, cy, maxWidth, lineHeight
-    );
+    if (o22 > 0) {
+        context.fillStyle = `rgba(180,20,60,${o22})`;
+        wrapText(
+            "There are parts of each other we don’t always love and that’s okay. There is no perfect relationship, but there is always scope to be better.",
+            cx, cy, maxWidth, lineHeight
+        );
+    }
 
     let o23 = getOpacity(5900, fadeIn, 1400, fadeOut);
-    if (o23 > 0) wrapText(
-        "We will learn, adjust, and become better for each other. I want us to grow together, fix what we can, accept what we can’t and always be with each other with patience and love.",
-        cx, cy, maxWidth, lineHeight
-    );
+    if (o23 > 0) {
+        context.fillStyle = `rgba(180,20,60,${o23})`;
+        wrapText(
+            "We will learn, adjust, and become better for each other. I want us to grow together, fix what we can, accept what we can’t and always be with each other with patience and love.",
+            cx, cy, maxWidth, lineHeight
+        );
+    }
 
     let o3 = getOpacity(7600, fadeIn, 900, fadeOut);
-    if (o3 > 0) wrapText(
-        "I didn’t always dream of this life. But with you in it, I want this life more than anything.",
-        cx, cy, maxWidth, lineHeight
-    );
+    if (o3 > 0) {
+        context.fillStyle = `rgba(180,20,60,${o3})`;
+        wrapText(
+            "I didn’t always dream of this life. But with you in it, I want this life more than anything.",
+            cx, cy, maxWidth, lineHeight
+        );
+    }
 
     let o4 = getOpacity(8800, fadeIn, 1000, fadeOut);
-    if (o4 > 0) wrapText(
-        "So today, I’m not asking something new. I’m asking you to choose me again. And I want us to keep choosing each other through everything no matter what.",
-        cx, cy, maxWidth, lineHeight
-    );
+    if (o4 > 0) {
+        context.fillStyle = `rgba(180,20,60,${o4})`;
+        wrapText(
+            "So today, I’m not asking something new. I’m asking you to choose me again. And I want us to keep choosing each other through everything no matter what.",
+            cx, cy, maxWidth, lineHeight
+        );
+    }
 
     let o5 = Math.min((frameNumber - 10100) / fadeIn, 1);
     if (o5 > 0) {
+        context.fillStyle = `rgba(180,20,60,${o5})`;
         wrapText(
             "So boboo will you please be my Valentine, my best friend and my wife 🥺❤️",
             cx, cy, maxWidth, lineHeight
