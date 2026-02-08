@@ -32,3 +32,49 @@ canvas {
     background-color: #1f1faa;
     color: #eee;
 }
+
+
+.choice-buttons {
+    position: absolute;
+    bottom: 120px; /* lifted higher */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 24px;
+    z-index: 10;
+}
+
+.choice-buttons button {
+    font-family: "Poppins", "Segoe UI", sans-serif;
+    font-size: 18px;
+    padding: 14px 34px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #ff4d6d, #ff758f);
+    color: white;
+
+    box-shadow: 0 10px 25px rgba(255, 77, 109, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.choice-buttons button:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 16px 35px rgba(255, 77, 109, 0.45);
+}
+
+.choice-buttons button:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 8px 18px rgba(255, 77, 109, 0.35);
+}
+
+#confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20;
+}
