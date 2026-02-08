@@ -153,16 +153,25 @@ function drawText() {
         );
     }
 
-    let o23 = getOpacity(5900, fadeIn, 1400, fadeOut);
+    let o23 = getOpacity(5900, fadeIn, 600, fadeOut);
     if (o23 > 0) {
         context.fillStyle = `rgba(180,20,60,${o23})`;
         wrapText(
-            "We will learn, adjust, and become better for each other. I want us to grow together, fix what we can, accept what we can’t and always be with each other with patience and love.",
+            "We will learn, adjust, and become better for each other.",
             cx, cy, maxWidth, lineHeight
         );
     }
 
-    let o3 = getOpacity(7600, fadeIn, 900, fadeOut);
+    let o24 = getOpacity(6800, fadeIn, 900, fadeOut);
+    if (o24 > 0) {
+        context.fillStyle = `rgba(180,20,60,${o24})`;
+        wrapText(
+            "I want us to grow together, fix what we can, accept what we can’t and always be with each other with patience and love.",
+            cx, cy, maxWidth, lineHeight
+        );
+    }
+
+    let o3 = getOpacity(8000, fadeIn, 900, fadeOut);
     if (o3 > 0) {
         context.fillStyle = `rgba(180,20,60,${o3})`;
         wrapText(
@@ -171,7 +180,7 @@ function drawText() {
         );
     }
 
-    let o4 = getOpacity(8800, fadeIn, 1000, fadeOut);
+    let o4 = getOpacity(9200, fadeIn, 1000, fadeOut);
     if (o4 > 0) {
         context.fillStyle = `rgba(180,20,60,${o4})`;
         wrapText(
@@ -180,7 +189,7 @@ function drawText() {
         );
     }
 
-    let o5 = Math.min((frameNumber - 10100) / fadeIn, 1);
+    let o5 = Math.min((frameNumber - 10500) / fadeIn, 1);
     if (o5 > 0) {
         context.fillStyle = `rgba(180,20,60,${o5})`;
         wrapText(
@@ -199,7 +208,14 @@ function showButtons() {
     if (buttonsShown) return;
     buttonsShown = true;
 
-    const container = document.getElementById("choice-container");
+    let container = document.getElementById("choice-container");
+
+    // ✅ Create container if it doesn't exist
+    if (!container) {
+        container = document.createElement("div");
+        container.id = "choice-container";
+        document.body.appendChild(container);
+    }
 
     container.innerHTML = `
         <div style="
@@ -208,10 +224,27 @@ function showButtons() {
             width: 100%;
             text-align: center;
             font-family: Comic Sans MS;
+            z-index: 10;
         ">
-            <button id="yesBtn" style="padding: 12px 26px; font-size: 18px; margin: 10px;">Yes ❤️</button>
-            <button id="noBtn" style="padding: 12px 26px; font-size: 18px; margin: 10px;">No 🙈</button>
-            <div id="answer" style="margin-top: 20px; font-size: 22px; color: #b4143c;"></div>
+            <button id="yesBtn" style="
+                padding: 12px 26px;
+                font-size: 18px;
+                margin: 10px;
+                cursor: pointer;
+            ">Yes ❤️</button>
+
+            <button id="noBtn" style="
+                padding: 12px 26px;
+                font-size: 18px;
+                margin: 10px;
+                cursor: pointer;
+            ">No 🙈</button>
+
+            <div id="answer" style="
+                margin-top: 20px;
+                font-size: 22px;
+                color: #b4143c;
+            "></div>
         </div>
     `;
 
@@ -224,6 +257,7 @@ function showButtons() {
             "Wrong answer 😌 you have to say Yes — you are my baby ❤️";
     };
 }
+
 
 /* ---------------- MAIN LOOP ---------------- */
 
