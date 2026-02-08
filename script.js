@@ -1,6 +1,9 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 const canvas = document.getElementById("starfield");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+
 const context = canvas.getContext("2d");
 
 /* ---------------- HEART BACKGROUND ---------------- */
@@ -18,7 +21,7 @@ for (let i = 0; i < heartsCount; i++) {
         y: random(0, canvas.height),
         size: random(6, 14),
         speed: random(0.2, 0.6),
-        opacity: random(0.15, 0.4)
+        opacity: random(0.2, 0.5)
     });
 }
 
@@ -31,7 +34,7 @@ function drawHeart(x, y, size, opacity) {
     context.bezierCurveTo(-10, -10, -20, 10, 0, 20);
     context.bezierCurveTo(20, 10, 10, -10, 0, 0);
     context.closePath();
-    context.fillStyle = `rgba(255, 120, 160, ${opacity})`;
+    context.fillStyle = `rgba(255, 105, 180, ${opacity})`;
     context.fill();
     context.restore();
 }
@@ -39,8 +42,8 @@ function drawHeart(x, y, size, opacity) {
 function updateHearts() {
     hearts.forEach(h => {
         h.y -= h.speed;
-        if (h.y < -30) {
-            h.y = canvas.height + 30;
+        if (h.y < -20) {
+            h.y = canvas.height + 20;
             h.x = random(0, canvas.width);
         }
     });
@@ -70,7 +73,7 @@ function wrapText(text, x, y, maxWidth, lineHeight) {
     context.fillText(line, x, y + offsetY);
 }
 
-/* ---------------- OPACITY CONTROLLER ---------------- */
+/* ---------------- TEXT ANIMATION ---------------- */
 
 let frameNumber = 0;
 
@@ -86,18 +89,16 @@ function getOpacity(start, fadeIn, hold, fadeOut) {
     return 0;
 }
 
-/* ---------------- TEXT ANIMATION ---------------- */
-
 function drawText() {
     const fontSize = Math.min(28, canvas.width / 18);
-    const lineHeight = fontSize + 8;
+    const lineHeight = fontSize + 6;
     const maxWidth = canvas.width * 0.75;
 
     context.font = `${fontSize}px Comic Sans MS`;
     context.textAlign = "center";
     context.textBaseline = "middle";
 
-    context.shadowColor = "rgba(255, 150, 180, 0.25)";
+    context.shadowColor = "rgba(255, 150, 180, 0.3)";
     context.shadowBlur = 5;
 
     const cx = canvas.width / 2;
@@ -108,7 +109,7 @@ function drawText() {
     const fadeOut = 120;
 
     // TEXT 1
-    const o1 = getOpacity(0, fadeIn, hold, fadeOut);
+    let o1 = getOpacity(0, fadeIn, hold, fadeOut);
     if (o1 > 0) {
         context.fillStyle = `rgba(180,20,60,${o1})`;
         wrapText(
@@ -118,7 +119,7 @@ function drawText() {
     }
 
     // TEXT 2
-    const o2 = getOpacity(600, fadeIn, hold, fadeOut);
+    let o2 = getOpacity(600, fadeIn, hold, fadeOut);
     if (o2 > 0) {
         context.fillStyle = `rgba(180,20,60,${o2})`;
         wrapText(
@@ -128,7 +129,7 @@ function drawText() {
     }
 
     // TEXT 3
-    const o3 = getOpacity(1200, fadeIn, hold, fadeOut);
+    let o3 = getOpacity(1200, fadeIn, hold, fadeOut);
     if (o3 > 0) {
         context.fillStyle = `rgba(180,20,60,${o3})`;
         wrapText(
@@ -138,7 +139,7 @@ function drawText() {
     }
 
     // TEXT 4
-    const o4 = getOpacity(1800, fadeIn, hold, fadeOut);
+    let o4 = getOpacity(1800, fadeIn, hold, fadeOut);
     if (o4 > 0) {
         context.fillStyle = `rgba(180,20,60,${o4})`;
         wrapText(
@@ -147,8 +148,8 @@ function drawText() {
         );
     }
 
-    // FINAL TEXT (fade in, stay forever)
-    const o5 = Math.min((frameNumber - 2400) / fadeIn, 1);
+    // FINAL TEXT (fade in and stay forever)
+    let o5 = Math.min((frameNumber - 2400) / fadeIn, 1);
     if (o5 > 0) {
         context.fillStyle = `rgba(180,20,60,${o5})`;
         wrapText(
@@ -179,4 +180,6 @@ window.addEventListener("resize", () => {
     canvas.height = window.innerHeight;
 });
 
-draw();
+requestAnimationFrame(draw);
+
+});
