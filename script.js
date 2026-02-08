@@ -105,31 +105,67 @@ function drawText() {
     const cy = canvas.height / 2;
 
     const fadeIn = 120;
-    const hold = 900;   // long holds for long paragraphs
+    // const hold = 900;   // long holds for long paragraphs
     const fadeOut = 120;
 
     // TEXT 1
-    let o1 = getOpacity(0, fadeIn, hold, fadeOut);
+    let o1 = getOpacity(0, fadeIn, 700, fadeOut);
     if (o1 > 0) {
         context.fillStyle = `rgba(180,20,60,${o1})`;
         wrapText(
-            "Bobooo back in 2023, on Propose Day, I asked you to marry me because when I looked at you, I didn’t just see my girlfriend, I saw my wife. That feeling hasn’t changed. If anything, it has only become more real.",
+            "Bobooo back in 2023, on Propose Day, I asked you to marry me because when I looked at you, I didn’t just see my girlfriend, I saw my wife.",
+            cx, cy, maxWidth, lineHeight
+        );
+    }
+
+    let o11 = getOpacity(1000, fadeIn, 600, fadeOut);
+    if (o11 > 0) {
+        context.fillStyle = `rgba(180,20,60,${o11})`;
+        wrapText(
+            "That feeling hasn’t changed. If anything, it has only become more real.",
             cx, cy, maxWidth, lineHeight
         );
     }
 
     // TEXT 2
-    let o2 = getOpacity(1200, fadeIn, hold * 1.5, fadeOut);
+    let o2 = getOpacity(1900, fadeIn, 700, fadeOut);
     if (o2 > 0) {
         context.fillStyle = `rgba(180,20,60,${o2})`;
         wrapText(
-            "Since then we have been through so much together. We have shared so many happy moments, spent countless hours side by side and we have had lots of fights too. We have seen each other's good and bad side. There are parts of each other we don’t always love and that’s okay. There is no perfect relationship, but there is always scope to be better. We will learn, adjust, and become better for each other. I want us to grow together, fix what we can, accept what we can’t and always be with each other with patience and love.",
+            "Since then we have been through so much together. We have shared so many happy moments, spent countless hours side by side and we have had lots of fights too.",
+            cx, cy, maxWidth, lineHeight
+        );
+    }
+
+    let o21 = getOpacity(2900, fadeIn, 500, fadeOut);
+    if (o21 > 0) {
+        context.fillStyle = `rgba(180,20,60,${o21})`;
+        wrapText(
+            "We have seen each other's good and bad side.",
+            cx, cy, maxWidth, lineHeight
+        );
+    }
+
+    let o22 = getOpacity(3700, fadeIn, 700, fadeOut);
+    if (o22 > 0) {
+        context.fillStyle = `rgba(180,20,60,${o22})`;
+        wrapText(
+            "There are parts of each other we don’t always love and that’s okay. There is no perfect relationship, but there is always scope to be better.",
+            cx, cy, maxWidth, lineHeight
+        );
+    }
+
+    let o23 = getOpacity(4700, fadeIn, 900, fadeOut);
+    if (o23 > 0) {
+        context.fillStyle = `rgba(180,20,60,${o23})`;
+        wrapText(
+            "We will learn, adjust, and become better for each other. I want us to grow together, fix what we can, accept what we can’t and always be with each other with patience and love.",
             cx, cy, maxWidth, lineHeight
         );
     }
 
     // TEXT 3
-    let o3 = getOpacity(3000, fadeIn, hold, fadeOut);
+    let o3 = getOpacity(5900, fadeIn, 600, fadeOut);
     if (o3 > 0) {
         context.fillStyle = `rgba(180,20,60,${o3})`;
         wrapText(
@@ -139,7 +175,7 @@ function drawText() {
     }
 
     // TEXT 4
-    let o4 = getOpacity(4200, fadeIn, hold, fadeOut);
+    let o4 = getOpacity(6800, fadeIn, 800, fadeOut);
     if (o4 > 0) {
         context.fillStyle = `rgba(180,20,60,${o4})`;
         wrapText(
@@ -149,7 +185,7 @@ function drawText() {
     }
 
     // FINAL TEXT (fade in and stay)
-    let o5 = Math.min((frameNumber - 5400) / fadeIn, 1);
+    let o5 = Math.min((frameNumber - 7900) / fadeIn, 1);
     if (o5 > 0) {
         context.fillStyle = `rgba(180,20,60,${o5})`;
         wrapText(
