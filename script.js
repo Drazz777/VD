@@ -104,7 +104,7 @@ function drawText() {
     const cy = canvas.height / 2;
 
     const fadeIn = 120;
-    const hold = 300;
+    const hold = 600;
     const fadeOut = 120;
 
     // TEXT 1
